@@ -1,5 +1,4 @@
-// import { post } from "jquery";
-// import checkNumInputs from "./checkNumInputs";
+import {postData} from '../services/requests';
 
 const forms = () => {
 
@@ -7,9 +6,6 @@ const forms = () => {
           inputs = document.querySelectorAll('input'),
           upload = document.querySelectorAll('[name="upload"]');
           
-    // Вызываем функуию валидацию цифр
-    // checkNumInputs('input[name="user_phone"]');
-
     const message = {
         loading: 'Загрузга...',
         success: 'Спасибо!Скоро мы с вами свяжемся!',
@@ -23,17 +19,6 @@ const forms = () => {
         designer: 'assets/server.php',
         question: 'assets/question.php'
     }
-
-
-    // Делаем фунцию для получения данных с сервера
-    const postData = async (url, data) => {
-        let res = await fetch(url, {
-            method: "POST",
-            body: data
-        });
-
-        return await res.text();
-    };
     // Отчищаем инпуты
     const clearInputs = () => {
         inputs.forEach(item => {
